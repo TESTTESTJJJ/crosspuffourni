@@ -2,9 +2,10 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CrossPuffourni - Puffs Jetables</title>
   <link rel="stylesheet" href="style/main.css" />
+  <!-- SDK PayPal avec client ID -->
   <script src="https://www.paypal.com/sdk/js?client-id=AYDLOfQ6t8pMJMCwDKJ2cvzRZTxaQR6MODivqKA8_jmDedJRMrfK1XK9dtGvrhOdF6Hnwny9oMMxPCT0&currency=EUR"></script>
 </head>
 <body>
@@ -15,8 +16,8 @@
       <a href="#categories">Catégories</a>
       <a href="contact.html">Contact</a>
       <a href="mentions-legales.html">Mentions légales</a>
-      <div class="icons">
-        <span id="panier-icon">🛒</span>
+      <div class="icons" id="panier-icon-container" style="cursor:pointer;">
+        🛒 <span id="panier-count" style="background:#39d778; color:#000; border-radius:50%; padding:0 6px; font-weight:bold; margin-left:4px;">0</span>
       </div>
     </nav>
   </header>
@@ -27,21 +28,22 @@
   </section>
 
   <main id="categories">
+
     <!-- 9000 Puffs -->
     <section class="categorie">
       <h2>9000 Puffs - Lot de 10 : 45 €</h2>
       <div class="produits">
-        <div class="carte-produit">
+        <div class="carte-produit" data-name="Waka Smash 9000" data-price="45">
           <img src="images/waka-smash-9000.jpg" alt="Waka Smash 9000" />
           <h3>Waka Smash 9000</h3>
           <p>45 € / lot de 10</p>
-          <div class="paypal-button" data-name="Waka Smash 9000" data-price="45"></div>
+          <button class="btn-ajout-panier">Ajouter au panier</button>
         </div>
-        <div class="carte-produit">
+        <div class="carte-produit" data-name="Tornado 9000" data-price="45">
           <img src="images/tornado-9000.jpg" alt="Tornado 9000" />
           <h3>Tornado 9000</h3>
           <p>45 € / lot de 10</p>
-          <div class="paypal-button" data-name="Tornado 9000" data-price="45"></div>
+          <button class="btn-ajout-panier">Ajouter au panier</button>
         </div>
       </div>
     </section>
@@ -50,107 +52,112 @@
     <section class="categorie">
       <h2>10000 Puffs - Lot de 10 : 50 €</h2>
       <div class="produits">
-        <div class="carte-produit">
+        <div class="carte-produit" data-name="RandM Tornado 10000" data-price="50">
           <img src="images/randm-tornado-10000.jpg" alt="RandM Tornado 10000" />
           <h3>RandM Tornado 10000</h3>
           <p>50 € / lot de 10</p>
-          <div class="paypal-button" data-name="RandM Tornado 10000" data-price="50"></div>
+          <button class="btn-ajout-panier">Ajouter au panier</button>
         </div>
-        <div class="carte-produit">
+        <div class="carte-produit" data-name="RandM Crystal 10000" data-price="50">
           <img src="images/randm-crystal-10000.jpg" alt="RandM Crystal 10000" />
           <h3>RandM Crystal 10000</h3>
           <p>50 € / lot de 10</p>
-          <div class="paypal-button" data-name="RandM Crystal 10000" data-price="50"></div>
+          <button class="btn-ajout-panier">Ajouter au panier</button>
         </div>
       </div>
     </section>
 
     <!-- 12000-13000 Puffs -->
     <section class="categorie">
-      <h2>12000–13000 Puffs - Lot de 10 : 60 €</h2>
+      <h2>12000-13000 Puffs - Lot de 10 : 60 €</h2>
       <div class="produits">
-        <div class="carte-produit">
+        <div class="carte-produit" data-name="Waka SoPro PA10000" data-price="60">
           <img src="images/waka-sopro-pa10000.jpg" alt="Waka SoPro PA10000" />
           <h3>Waka SoPro PA10000</h3>
           <p>60 € / lot de 10</p>
-          <div class="paypal-button" data-name="Waka SoPro PA10000" data-price="60"></div>
+          <button class="btn-ajout-panier">Ajouter au panier</button>
         </div>
-        <div class="carte-produit">
+        <div class="carte-produit" data-name="iJoy Bar IC8000" data-price="60">
           <img src="images/ijoy-bar-ic8000.jpg" alt="iJoy Bar IC8000" />
           <h3>iJoy Bar IC8000</h3>
           <p>60 € / lot de 10</p>
-          <div class="paypal-button" data-name="iJoy Bar IC8000" data-price="60"></div>
+          <button class="btn-ajout-panier">Ajouter au panier</button>
         </div>
-        <div class="carte-produit">
+        <div class="carte-produit" data-name="Elf Bar BC5000 Ultra" data-price="60">
           <img src="images/elf-bar-bc5000-ultra.jpg" alt="Elf Bar BC5000 Ultra" />
           <h3>Elf Bar BC5000 Ultra</h3>
           <p>60 € / lot de 10</p>
-          <div class="paypal-button" data-name="Elf Bar BC5000 Ultra" data-price="60"></div>
+          <button class="btn-ajout-panier">Ajouter au panier</button>
         </div>
       </div>
     </section>
 
     <!-- 15000-16000 Puffs -->
     <section class="categorie">
-      <h2>15000–16000 Puffs - Lot de 10 : 75 €</h2>
+      <h2>15000-16000 Puffs - Lot de 10 : 75 €</h2>
       <div class="produits">
-        <div class="carte-produit">
+        <div class="carte-produit" data-name="Waka soFit 16000" data-price="75">
           <img src="images/waka-sofit-16000.jpg" alt="Waka soFit 16000" />
           <h3>Waka soFit 16000</h3>
           <p>75 € / lot de 10</p>
-          <div class="paypal-button" data-name="Waka soFit 16000" data-price="75"></div>
+          <button class="btn-ajout-panier">Ajouter au panier</button>
         </div>
-        <div class="carte-produit">
+        <div class="carte-produit" data-name="Geek Bar Pulse 15000" data-price="75">
           <img src="images/geek-bar-pulse-15000.jpg" alt="Geek Bar Pulse 15000" />
           <h3>Geek Bar Pulse 15000</h3>
           <p>75 € / lot de 10</p>
-          <div class="paypal-button" data-name="Geek Bar Pulse 15000" data-price="75"></div>
+          <button class="btn-ajout-panier">Ajouter au panier</button>
         </div>
-        <div class="carte-produit">
+        <div class="carte-produit" data-name="Lost Mary MO20000" data-price="75">
           <img src="images/lost-mary-mo20000.jpg" alt="Lost Mary MO20000" />
           <h3>Lost Mary MO20000</h3>
           <p>75 € / lot de 10</p>
-          <div class="paypal-button" data-name="Lost Mary MO20000" data-price="75"></div>
+          <button class="btn-ajout-panier">Ajouter au panier</button>
         </div>
       </div>
     </section>
 
-    <!-- 18000–20000+ Puffs -->
+    <!-- 18000-20000+ Puffs -->
     <section class="categorie">
-      <h2>18000–20000+ Puffs - Lot de 10 : 90 €</h2>
+      <h2>18000-20000+ Puffs - Lot de 10 : 90 €</h2>
       <div class="produits">
-        <div class="carte-produit">
+        <div class="carte-produit" data-name="Lost Mary Turbo 20000" data-price="90">
           <img src="images/lost-mary-turbo-20000.jpg" alt="Lost Mary Turbo 20000" />
           <h3>Lost Mary Turbo 20000</h3>
           <p>90 € / lot de 10</p>
-          <div class="paypal-button" data-name="Lost Mary Turbo 20000" data-price="90"></div>
+          <button class="btn-ajout-panier">Ajouter au panier</button>
         </div>
-        <div class="carte-produit">
+        <div class="carte-produit" data-name="TMT Vape 20000" data-price="90">
           <img src="images/tmt-vape-20000.jpg" alt="TMT Vape 20000" />
           <h3>TMT Vape 20000</h3>
           <p>90 € / lot de 10</p>
-          <div class="paypal-button" data-name="TMT Vape 20000" data-price="90"></div>
+          <button class="btn-ajout-panier">Ajouter au panier</button>
         </div>
-        <div class="carte-produit">
+        <div class="carte-produit" data-name="iJoy Bar Turbo 20000" data-price="90">
           <img src="images/ijoy-bar-turbo-20000.jpg" alt="iJoy Bar Turbo 20000" />
           <h3>iJoy Bar Turbo 20000</h3>
           <p>90 € / lot de 10</p>
-          <div class="paypal-button" data-name="iJoy Bar Turbo 20000" data-price="90"></div>
+          <button class="btn-ajout-panier">Ajouter au panier</button>
         </div>
-        <div class="carte-produit">
+        <div class="carte-produit" data-name="Waka soPro Z 20000" data-price="90">
           <img src="images/waka-sopro-z-20000.jpg" alt="Waka soPro Z 20000" />
           <h3>Waka soPro Z 20000</h3>
           <p>90 € / lot de 10</p>
-          <div class="paypal-button" data-name="Waka soPro Z 20000" data-price="90"></div>
+          <button class="btn-ajout-panier">Ajouter au panier</button>
         </div>
       </div>
     </section>
+
   </main>
 
-  <footer>
-    <p>© 2025 CrossPuffourni. Tous droits réservés.</p>
-    <p><a href="mailto:filmenvf.a@gmail.com">filmenvf.a@gmail.com</a></p>
-  </footer>
+  <!-- Modal Panier -->
+  <div id="panier-modal" style="display:none; position:fixed; top:10%; left:50%; transform:translateX(-50%); background:#222; color:#fff; border:2px solid #39d778; padding:20px; width:90vw; max-width:400px; z-index:1000; border-radius:10px;">
+    <h2>Votre panier</h2>
+    <div id="panier-items"></div>
+    <div style="margin-top: 15px; font-weight:bold;">Total: <span id="panier-total">0.00</span> €</div>
+    <div id="paypal-button-container" style="margin-top:20px;"></div>
+    <button id="fermer-panier" style="margin-top:20px; background:#39d778; color:#000; border:none; padding:8px 15px; border-radius:5px; cursor:pointer;">Fermer</button>
+  </div>
 
   <script src="scripts/main.js"></script>
 </body>
